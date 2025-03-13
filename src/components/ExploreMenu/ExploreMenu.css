@@ -1,0 +1,130 @@
+.explore-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    text-align: center;
+}
+
+.explore-menu h1 {
+    color: crimson;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.explore-menu-text {
+    max-width: 60%;
+    color: #555;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+/* Container list tetap dalam satu baris */
+.explore-menu-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+    margin: 30px 0;
+    overflow-x: auto; /* Supaya bisa scroll ke samping jika terlalu panjang */
+    white-space: nowrap; /* Mencegah turun ke bawah */
+    padding: 10px 0;
+    scrollbar-width: none; /* Hilangkan scrollbar default di Firefox */
+}
+
+.explore-menu-list::-webkit-scrollbar {
+    display: none; /* Hilangkan scrollbar di Chrome/Safari */
+}
+
+.explore-menu-list-item {
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.explore-menu-list-item img {
+    width: 130px; /* Ukuran lebih besar */
+    height: 130px;
+    min-width: 100px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.explore-menu-list-item:hover {
+    transform: scale(1.1);
+}
+
+.explore-menu-list-item img:hover {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.explore-menu-list-item p {
+    margin-top: 10px;
+    color: #444;
+    font-size: max(1.5vw, 18px);
+    font-weight: 500;
+    transition: color 0.3s;
+    white-space: normal; /* Agar teks tetap wrap jika panjang */
+}
+
+.explore-menu-list-item p:hover {
+    color: crimson;
+}
+
+.explore-menu hr {
+    margin: 15px 0;
+    height: 3px;
+    background: #e2e2e2;
+    border: none;
+    width: 80%;
+    border-radius: 2px;
+}
+
+.explore-menu-list-item .active {
+    border: 5px solid crimson;
+    padding: 5px;
+    box-shadow: 0px 4px 12px rgba(220, 20, 60, 0.5);
+}
+
+/* Responsif tetap horizontal tanpa turun ke bawah */
+@media (max-width: 1050px) {
+    .explore-menu-text {
+        max-width: 100%;
+        font-size: 16px;
+    }
+    
+    .explore-menu-list {
+        flex-wrap: nowrap; /* Pastikan tetap dalam satu baris */
+        overflow-x: auto; /* Scroll horizontal di layar kecil */
+    }
+    
+    .explore-menu-list-item img {
+        width: 110px;
+        height: 110px;
+    }
+}
+.explore-menu-list-item {
+    display: inline-block;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s;
+}
+
+.explore-menu-list-item:hover {
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+
+/* Efek floating */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.explore-menu-list-item img:hover {
+    animation: float 1.5s ease-in-out infinite;
+}
+
